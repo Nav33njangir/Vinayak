@@ -166,22 +166,41 @@
                 alt="" class="galleryImg">
         </div>
     </div>
-    <div class="newSeason">
-        <div class="nsItemss">
-            <img src="https://images.unsplash.com/photo-1583878543723-dcd6ad8bcb3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="" class="nsImg">
+    <div id="newSeason">
+        <div class="season_slide">
+            <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img class="season_slide_image" src="https://images.unsplash.com/photo-1583878543723-dcd6ad8bcb3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+            </div>
+    
+            <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img class="season_slide_image" src="https://images.unsplash.com/photo-1583878543723-dcd6ad8bcb3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+            </div>
+    
+            <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img class="season_slide_image" src="https://images.unsplash.com/photo-1583878543723-dcd6ad8bcb3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+            </div>
+    
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <div class="season_row">
+            <div class="season_row_thumbnails" onclick="currentSlide(1)" style="background-color: red">
+            </div>
+            <div class="season_row_thumbnails" onclick="currentSlide(2)" style="background-color: blue;">
+            </div>
+            <div class="season_row_thumbnails" onclick="currentSlide(3)" style="background-color: green;">
+            </div>
         </div>
         <div class="nsItem">
             <h3 class="nsTitleSm">NEW ARRIVALS </h3>
             <h1 class="nsTitle">FOR WEDDING SEASON</h1>
             <h1 class="nsTitle">New Collection</h1>
-            <a href="#nav">
+            <a href="./event.html">
                 <button class="nsButton">CHOOSE YOUR STYLE</button>
             </a>
-        </div>
-        <div class="nsItem">
-            <img src="https://images.unsplash.com/photo-1601120979673-b3f6f4c7d2ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="" class="nsImg">
         </div>
     </div>
     <footer>
@@ -229,23 +248,20 @@
                 <div class="footerRightMenu">
                     <h1 class="fMenuTitle">Follow Us</h1>
                     <div class="fIcons">
-                        <a href="https://www.google.co.in/">
+                        <a href="https://www.facebook.com/">
                             <img src="./img/facebook.png" alt="" class="fIcon">
-                        </a:href>
-                        <a href="www.google.com">
+                        </a>
+                        <a href="https://www.twitter.com/">
                             <img src="./img/twitter.png" alt="" class="fIcon">
-                        </a:href>
-                        <a href="www.google.com">
+                        </a>
+                        <a href="https://www.instagram.com/">
                             <img src="./img/instagram.png" alt="" class="fIcon">
-                        </a:href>
-                        <a href="www.google.com">
+                        </a>
+                        <a href="https://www.whatsapp.com/">
                             <img src="./img/whatsapp.png" alt="" class="fIcon">
-                        </a:href>
+                        </a>
                     </div>
                 </div>
-                <!-- <div class="footerRightMenu">
-                    
-                </div> -->
             </div>
             <div class="">
                 <img id="footer_logo" src="./img/logog01.png" alt="" srcset="">
@@ -256,6 +272,29 @@
         </div>
     </footer>
     <script src="./app.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
